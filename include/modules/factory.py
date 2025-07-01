@@ -24,7 +24,7 @@ class Factory:
     
     def write_to_shelve(self, name: str, weight: float) -> None:
         db = self.make_connection()
-        db[name] = weight
+        db[name] = round(weight)
         db.close()
     
 

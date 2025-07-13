@@ -1,4 +1,4 @@
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <br>
 Այս պարզ կսրիպտը նախատեսված է օգնելու կատարել իվենտարիզացիա, այն առաջին հերթին նախատեսված է բարի ամսավերջյան հաշվարկի համար, սակայն դրա բազզան համապաստասխան ինֆորմացիայի լրացնելու դեպքում կարող է ծառայել այլ սցենարներում ևս։
 

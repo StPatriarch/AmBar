@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ambar"
+version = "0.0.1.dev725"
+description = "Այս պարզ կսրիպտը նախատեսված է օգնելու կատարել իվենտարիզացիա"
+authors = [
+    { name = "Stpatrirach" }
+]
+requires-python = ">=3.7"
+dependencies = [
+    "colorama>=0.4.6",
+    "openpyxl>=3.1.5",
+    "setuptools>=80.9.0"
+]
+
+[tool.setuptools]
+packages = ["include"]  # заменишь на своё имя папки-пакета, если нужно
+
+# # (не обязательно, но рекомендуется)
+# [tool.setuptools.package-data]
+# "ambar" = ["*.txt", "*.md"]

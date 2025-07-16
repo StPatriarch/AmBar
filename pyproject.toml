@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["include"]  # заменишь на своё имя папки-пакета, если нужно
+packages = ["include"] 
 
 # # (не обязательно, но рекомендуется)
 # [tool.setuptools.package-data]

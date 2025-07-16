@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 from include.modules.factory import Factory, PowderFactory, DrinkFactory
-from include.modules.database import DataBase
+from include.modules.database import SQLDataBase
 from include.symbols import ERROR
 from include.validations import check_barcode_length
 
 # DataBase init
-DB = DataBase('bar_base.db')
+DB = SQLDataBase('bar_base.db')
 
 
 class Command:

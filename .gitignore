@@ -212,3 +212,9 @@ env/
 */lib*/
 pyvenv.cfg
 bar/
+
+# other file types user
+
+*.xlsx
+.DS_Store
+buffer.db

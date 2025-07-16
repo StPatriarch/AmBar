@@ -7,7 +7,7 @@ from include.symbols import CLIPBOARD, ERROR, REPEAT, INBOX, ARROW
 
 init()
 
-def full_weigth() -> int:
+def full_weight() -> int:
 	weight = input(Fore.GREEN + f"Ընդհանուր քաշը(գր) {CLIPBOARD} " + Style.RESET_ALL)
 	while not weight.isdigit():
 		print(Fore.RED + f"{ERROR} Սխալ Արժեք... {ARROW} \n" + Style.RESET_ALL )

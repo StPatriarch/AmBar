@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from include.validations import full_weigth
-import shelve
+from include.modules.database import ShelveDataBase as shdb
 from colorama import Fore, Style, init
+from include.validations import full_weight
 from include.symbols import JAR, DRINK, OUTBOX, RECYCLING
 init()
 
@@ -17,15 +17,7 @@ class Factory:
         raise NotImplementedError
 
     def full_weight_validation(self) -> int:
-        return full_weigth()
-    
-    def make_connection(self) -> None:
-        return shelve.open("buffer.db")
-    
-    def write_to_shelve(self, name: str, weight: float) -> None:
-        db = self.make_connection()
-        db[name] = round(weight)
-        db.close()
+        return full_weight()
     
 
     def string_output_design(self, weight: float, type: str) -> None:
@@ -85,7 +77,7 @@ class DrinkFactory(Factory):
 
         self.string_output_design(CLEAR_WEIGTH, 'մլ․')
 
-        self.write_to_shelve(name=self.data_base['drink_name'], weight=CLEAR_WEIGTH)
+        shdb().write_to(name=self.data_base['drink_name'], weight=CLEAR_WEIGTH)
 
         input(Fore.BLUE + f"{RECYCLING} ՇԱՐՈՒՆԱԿԵԼ {RECYCLING} " + Style.RESET_ALL) 
 

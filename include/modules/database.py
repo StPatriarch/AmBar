@@ -1,7 +1,21 @@
 import sqlite3
+import shelve
+from abc import ABC, abstractmethod
 
 
-class DataBase:
+class DataBaseManager(ABC):
+
+    @abstractmethod
+    def _connection():
+        pass
+
+    @abstractmethod
+    def write_to():
+        pass    
+
+
+
+class SQLDataBase(DataBaseManager):
     def __init__(self, name):
         self.name = name
         self.connection = sqlite3.connect(self.name)
@@ -21,7 +35,7 @@ class DataBase:
 
         return self._connection(query, (barcode,)).fetchone()
 
-    def add_to(self, data, tare=False):
+    def write_to(self, data, tare=False):
         keys_ = ', '.join(key for key in data.keys())
         values_ = tuple(data.values())
         placeholders_ = ', '.join(["?"] * len(data))
@@ -32,14 +46,13 @@ class DataBase:
         
         return self._connection(query, values_)
 
-if __name__ == "__main__":
-    # dict_ = {
-    #     "barcode": '1111111112',
-    #     "drink_name": "Արարատ",
-    #     "bottle_weight": 800,
-    #     "density": 0.910
-    # }
-    barcode = '18000000313'
-    db = DataBase('bar_base.db')
-    data = db.select(barcode, 1)
-    print(dict(data))
+
+class ShelveDataBase(DataBaseManager):
+
+    def _connection(self):
+        return shelve.open("buffer.db")
+    
+    def write_to(self, name: str, weight: float) -> None:
+        db = self._connection()
+        db[name] = round(weight)
+        db.close()

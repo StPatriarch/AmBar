@@ -30,17 +30,3 @@ class ExcelTable:
             self.workbook[f'A{row}'] = name
             self.workbook[f'B{row}'] = weight
             row += 1 
-
-if __name__ == "__main__":
-    ex = ExcelTable()
-    # ex.convert_and_save()
-    
-    db = ex.read_from_shelve()
-    print(len(db))
-    # db['Չիվազ Ռեգալ 10 (1L)'] = 595.0
-    # db['Չիվազ Ռեգալ 11 (1L)'] = 595.0
-    # db['Չիվազ Ռեգալ 12 (1L)'] = 595.0
-    # db['Չիվազ Ռեգալ 14 (1L)'] = 595.0
-
-    # for name, value in db.items():
-    #     print(name, value)

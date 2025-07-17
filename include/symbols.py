@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 CLIPBOARD = "\U0001F4CB"
 ARROW = "\U00002935"
 ERROR = "\U0000274C"

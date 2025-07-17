@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import signal
 import sys
 import os
@@ -10,6 +11,7 @@ from include.symbols import print_centered
 def close_handler(sig, frame):
     file = ExcelTable()
     file.convert_and_save()
+    print()
     print('Աշխատանքի ավարտ')
     sys.exit(0)
     

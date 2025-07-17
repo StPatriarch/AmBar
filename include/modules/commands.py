@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+
+# Ավանդաբար այս մոդուլը համարվում է կապող օղակ, այդ ծրագրի պայմաններում այն կապում է նախորդող database factory մոդուլները 
+# բերելով դրանց աշխատանքը մեկ ընդահնուր լոգիկայի։ Մոդուլը առաջարկում է ամբողջ ծրագիրի հավաքական ֆունկցիոնալը և լրացնում այն մասերը 
+# որոնք պակասում էին իր նախորրդների նեջ։
+
 from include.modules.factory import Factory, PowderFactory, DrinkFactory
 from include.modules.database import SQLDataBase
 from include.symbols import ERROR
